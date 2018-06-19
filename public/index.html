@@ -5,18 +5,43 @@
 <head>
     <title>Kreso wants anime</title>
     <link rel="stylesheet" href="styles/styles.css">
-    <script src="src/index.js"></script>
-
-    <section class="searchthings">
-        <form action="" method="">		    
-            <input type="search" placeholder="Search anime">		    	
-            <button>Search</button>
-        </form>
-    </section>
+    <a href= target= "https://kitsu.io/anime/netsuzou-trap" /a>
+    
 </head>
 
 <body>
+    <div id="app"></div>
+    
+    <section class="searchthings">
+        <form action="" method="">		    
+            <input type="search" placeholder="Search anime"></input>		    	
+            <button> Search </button>
+        </form>
+    </section>
+    
 
+    <script>
+      fetch ('https://kitsu.io/api/edge/anime?filter[text]=cowboy%20bebop', {mode: 'no-cors'})
+        .then (function(response) {
+      if (response.status !== 200) {
+        console.log('Looks like there was a problem. Status Code: ' +
+          response.status);
+        return;
+      }
+
+      // Examine the text in the response
+      response.json().then(function(data) {
+        console.log(data);
+      });
+    }
+  )
+  .catch(function(err) {
+    console.log('Fetch Error :-S', err);
+  });
+        
+        </script>
+
+    <script src="src/index.js"></script>
 </body>
 
 </html>

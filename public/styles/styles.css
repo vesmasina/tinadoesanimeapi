@@ -8,6 +8,13 @@
 	width: 100%;
 }
 
+.result{
+	background: url(./assets/bckg.jpeg) no-repeat center center fixed;
+	height: 100%;
+	position: absolute;
+	text-align: center;
+	width: 100%;
+}
 
 .searchthings:before,
 .searchthings:after {
